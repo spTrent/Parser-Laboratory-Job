@@ -40,12 +40,13 @@ def parser_rfc():
 
 def parser_loc():
     browser = wd.Chrome()
-    browser.get('https://search.catalog.loc.gov/instances/991e716f-246f-58d3-906e-c6c1d8223e40?option=keyword&pageNumber=1&query=The%20C%20programming%20language%20Kernighan%20and%20Ritchie&recordsPerPage=25')
+    url_loc = 'https://search.catalog.loc.gov/instances/9acb1e70-9ea7-5ec1-9e9e-4d1e8b6d865e?option=title&pageNumber=1&query=The%20C%20programming%20language&recordsPerPage=25'
+    browser.get(url_loc)
     time.sleep(5)
     html = browser.page_source
     soup = BeautifulSoup(html, 'lxml')
     isbn = soup.find('div', class_='recordMetadata__content recordMetadata__isbnContent')
-    isbn_10 = isbn.find_all('li')[-1]
+    isbn_10 = isbn.find_all('li')[1]
     return isbn_10.text
 
 

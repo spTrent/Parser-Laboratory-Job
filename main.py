@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 import lxml
 from datetime import datetime
 from selenium import webdriver as wd
-import unittest
 
 
 user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36 OPR/121.0.0.0 (Edition std-2)'
